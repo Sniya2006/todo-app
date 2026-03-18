@@ -1,29 +1,47 @@
-body {
+/* RESET */
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #1e3a8a, #9333ea);
-  color: white;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* BODY */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e3a8a, #9333ea);
+  color: white;
+  min-height: 100vh;
+}
+
+/* CONTAINER */
 .container {
   text-align: center;
   padding: 50px 20px;
 }
 
+/* HEADINGS */
 h1 {
   font-size: 2.5rem;
 }
 
+p {
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+/* CARD */
 .card {
   background: rgba(255, 255, 255, 0.1);
   margin: 20px auto;
   padding: 20px;
-  width: 300px;
+  width: 90%;
+  max-width: 320px;
   border-radius: 15px;
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
 }
 
+/* BUTTON */
 button {
   padding: 10px 20px;
   margin-top: 10px;
@@ -40,4 +58,54 @@ button:hover {
   background: #0ea5e9;
   transform: scale(1.05);
 }
-  
+
+/* ANIMATIONS */
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+.slide-up {
+  animation: slideUp 1s ease forwards;
+}
+
+.delay {
+  animation-delay: 0.5s;
+}
+
+/* KEYFRAMES */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
